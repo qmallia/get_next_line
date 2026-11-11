@@ -6,7 +6,7 @@
 /*   By: qmallia <qmallia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:05:29 by qmallia           #+#    #+#             */
-/*   Updated: 2026/11/10 21:16:25 by qmallia          ###   ########.fr       */
+/*   Updated: 2026/11/11 10:59:28 by qmallia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	*create_new_stock(char *stock)
 	}
 	new_stock = malloc(ft_strlen(stock + i) + 1);
 	if (!new_stock)
-		return (NULL);
+		free_errors(stock, NULL);
 	i++;
 	while (stock[i])
 		new_stock[j++] = stock[i++];

@@ -6,7 +6,7 @@
 /*   By: qmallia <qmallia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/10 11:05:29 by qmallia           #+#    #+#             */
-/*   Updated: 2026/11/10 21:21:40 by qmallia          ###   ########.fr       */
+/*   Updated: 2026/11/11 10:58:45 by qmallia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 	static char	*stock[4096];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= 4096 || BUFFER_SIZE <= 0)
 		return (NULL);
 	stock[fd] = read_file(fd, stock[fd]);
 	if (!stock[fd])
